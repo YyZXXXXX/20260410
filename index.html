@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 練習專案目錄</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      background-color: #f5f7fa;
+      overflow: hidden; /* 防止整個頁面捲動 */
+    }
+    /* 左側邊欄樣式 */
+    .sidebar {
+      width: 280px;
+      background-color: #ffffff;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+      flex-direction: column;
+      z-index: 10;
+    }
+    .header {
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #bc8ddb, #75b7d6);
+      color: rgb(255, 255, 255);
+      text-align: center;
+    }
+    .header h1 { 
+      margin: 0;
+      font-size: 22px;
+    }
+    .header p {
+      margin: 10px 0 0 0;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+    .menu-container {
+      flex: 1;
+      overflow-y: auto; /* 選單過長時可捲動 */
+    }
+    .menu {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .menu li {
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .menu a {
+      display: block;
+      padding: 16px 24px;
+      text-decoration: none;
+      color: #4a4a4a;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .menu a:hover {
+      background-color: #f8fafc;
+      color: #4a90e2;
+      padding-left: 30px; /* 增加 Hover 時的動態縮排感 */
+    }
+    /* 右側主要內容區樣式 */
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+    .iframe-container {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 左側選單 -->
+  <div class="sidebar">
+    <div class="header">
+      <h1>📁 Vue 練習目錄</h1>
+      <p>學號：413730119</p>
+    </div>
+    <div class="menu-container">
+      <ul class="menu">
+        <!-- 注意：加上 target="contentFrame" 指向右側 iframe -->
+        <li><a href="ex1/index.html" target="contentFrame">練習 1：我的第一個 Vue 頁面</a></li>
+        <li><a href="ex2/index.html" target="contentFrame">練習 2：資料綁定</a></li>
+        <li><a href="ex3/index.html" target="contentFrame">練習 3：事件處理</a></li>
+        <li><a href="ex4/index.html" target="contentFrame">練習 4：v-model 雙向綁定</a></li>
+        <li><a href="ex5/index.html" target="contentFrame">練習 5：v-if 條件渲染</a></li>
+        <li><a href="ex6/index.html" target="contentFrame">練習 6：v-for 列表渲染</a></li>
+        <li><a href="ex7/index.html" target="contentFrame">練習 7：Computed 計算屬性</a></li>
+        <li><a href="ex8/index.html" target="contentFrame">練習 8：動態綁定 Style</a></li>
+        <li><a href="ex9/index.html" target="contentFrame">練習 9：綜合應用 (待辦清單)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 右側展示區 -->
+  <div class="content">
+    <div class="iframe-container">
+      <!-- 預設載入 ex1 的頁面 -->
+      <iframe name="contentFrame" src="ex1/index.html" title="內容展示區"></iframe>
+    </div>
+  </div>
+</body>
+</html>
